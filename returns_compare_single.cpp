@@ -18,6 +18,7 @@ DLLFUNC void run() {
     MonteCarlo = 0;
     StopFactor = 0;
     StartDate = 20200719;
+    EndDate = 20220601;
     Hedge = 0;
     BarZone = UTC;
     LookBack = 0;
@@ -43,11 +44,10 @@ DLLFUNC void run() {
 
         if (!initialInvestment) {
 #ifdef REBALANCE
-            /// We must invest more then 1 lot to run the backtest till the end
-            initialInvestment = priceClose(0) * 100;
+            initialInvestment = 100;
 #else
             /// Start with 1 Lot
-            initialInvestment = priceClose(0);
+            initialInvestment = priceClose(0)*LotAmount;
 #endif
         }
 
