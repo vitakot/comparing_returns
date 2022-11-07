@@ -32,9 +32,9 @@ DLLFUNC void run() {
     if (is(INITRUN)) {
         asset("BTC-PERP");
 #ifdef REBALANCE
-        plotFile.open("Log\\returns_compare_rebalance.csv");
+        plotFile.open("Log\\zorro_returns_compare_rebalance.csv");
 #else
-        plotFile.open("Log\\returns_compare_allin.csv");
+        plotFile.open("Log\\zorro_returns_compare_allin.csv");
 #endif
         plotFile << "timestamp,returns" << std::endl;
     }
